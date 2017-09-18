@@ -1,0 +1,141 @@
+\documentclass[12pt,a4paper]{article}  
+%\usepackage{fullpage} %for minimal marginal  
+\usepackage[utf8]{inputenc}    %encoding
+
+\usepackage[english]{babel} %English sections
+\usepackage{graphicx}    %For the possibility of pictures
+\usepackage{amssymb, amsmath} %for American Math. society symbols and environments etc.
+\usepackage{supertabular} % For tables that are larger than one page
+\usepackage{longtable} %for longer tables 
+\usepackage{multirow} %If one want to have the text in several rows
+\usepackage{tabularx} %Tables with dynamic cell-sizes
+\usepackage{multicol} %Nödvändigt om man vill ha flera kolumner
+
+%Figure captions must be at the bottom
+\usepackage{floatrow}
+\floatsetup[figure]{capposition=bottom}
+\floatsetup[table]{capposition=top}
+
+%This is so that I dont need to have figure-captions that are wider than the text (really ugly)
+\usepackage{caption}
+\usepackage{lipsum}
+
+
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using usepackage import
+\usepackage{import}
+
+%I want footnotes with Roman letters...
+\renewcommand{\thefootnote}{\roman{footnote}}
+
+%BibLaTeX grejer...
+%Explanation:
+%style sets the format of the reference list at the end of the report
+%citestyle sets the format of the cites
+\usepackage[backend=bibtex,style=chem-acs,citestyle=chem-acs]{biblatex}
+
+%\bibliographystyle{unsrt}
+\bibliography{references}
+
+
+%XX YET TO COME
+
+%%%%%%%%%%%Brja deklarationen av bilder i multicols%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{myFCounter}[section]
+\newcommand{\myFigure}[3]{%
+    \begin{center}\begin{minipage}[t]{\columnwidth}%
+    \begin{center}\refstepcounter{myFCounter}\vspace{1ex}%
+    \includegraphics[width=#1\columnwidth,keepaspectratio]{#2}\ \\%
+    \sc Figure \thesection .\arabic{myFCounter}:\ \rm #3 
+    \vspace{1ex}\end{center}%
+    \end{minipage}\end{center}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Sara Kjellberg}
+\title{Surface functionalization of H-terminated diamond with NH and NH$_2$ on the (1 0 0), (1 1 0) and (1 1 1) surface planes using Density Functional Theory.}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.15\textwidth]{pictures/uulog.png}\par\vspace{1cm}
+	{\scshape\LARGE Uppsala University \par}
+	\vspace{1cm}
+	{\scshape\Large Bachelor project, 15hp\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Surface functionalization of H-terminated diamond with NH and NH$_2$ on the (1 0 0), (1 1 0) and (1 1 1) surface planes using Density Functional Theory\par}
+	\vspace{2cm}
+	{\Large\itshape Sara Kjellberg\par}
+	\vfill
+	Supervised by\par
+	Prof.~Karin \textsc{Larsson}
+
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+%\maketitle
+%\begin{figure}[t] \captionsetup{width=.8\linewidth}
+%\includegraphics[width=2cm]{pictures/uulog.png}
+%\end{figure}
+%\hrulefill %skriv ut en linje
+\abstract{The adsorption energy of aminated diamond surfaces on the (1 1 1), (1 1 0) and (1 0 0) diamond surfaces have been calculated with density functional theory (DFT). The resulting values show that bridging is favoured before on-top nitrogen at low coverage for all the low index planes. The trend is even more pronounced as the coverage increases, most likely due to sterical hindrance. As expected, the imidogen (NH) and amidogen (NH$_2$)  groups are bonded to the surface planes in the order (1 0 0)$>$(1 1 1)$>$(1 1 0) as decrease in energy is the highest on the (1 0 0) plane and lowest on the (1 010) plane. The effect of sterical hindrance is largest at the (1 1 0) surface while the (1 0 0) surface is almost unaffected by neighbouring functional groups. Also, double bonded on-top imidogen (NH) is the least stable group at the (1 0 0) surface at low coverage while it is almost as stable as bridging NH when having a full mono-layer. Moreover, on-top imidogen (NH) was highly distorted and forced a change in surface geometry}
+
+\newpage
+%\hrulefill %skriv ut en linje
+\tableofcontents
+\newpage
+
+\section{Goal}
+The goal of this study was firstly to find out which one of amidogen (NH$_2$) and imidogen (NH, on-top or bridge) is theoretically most strongly bonded to a diamond surface. Secondly to find out whether NH$_2$ or NH (on-top or bridge) is theoretically best attached to a (1 0 0), (1 1 0) or (1 1 1) oriented diamond surface.
+
+\section{Introduction}
+\subsection{Background}
+%\textbf{I may use this section if it is allowed to use a summary of other articles. }
+Diamond, and in particular nanodiamond, has become a promising candidate for several fields of application. One of those applications is to use it in medical and biological sciences as it possess biocompatibility  as well as good chemical and electrical properties. It also has a large electro-potential window, which may be further enhanced or inhibited by modifying the surface. Furthermore, even though diamonds show good physical/chemical stability, the surfaces are still easily modified or functionalized by photochemical reactions \cite{c.e.nebel2007}.
+%(\textit{Review. Diamond and biology } C.E. Nebel  \textit{et. al.}) 
+
+%\paragraph*{}
+%Analytica Chimica Acta 573-574 (2006), 3-8
+%Adding amidogen and imide to surfaces changes makes the diamond surface more sensitive to pH, wich might be medical use as some diseases makes the pH lower or higher than normal. 
+To use diamond for medical purposes such as the growing of bones, proteins and DNA must first be successfully attached to the diamond surface. One way to enhance the attachment of these types of molecules is functionalizing surfaces with various biologically common functional groups before trying to bind the specific molecule to the surface. Amine-based groups in particular may be a good step on the way to so this since both imidogen (NH-) and amidogen (NH$_2$) are part of many well known biochemical and organical reactions. This has already been done as preliminary step in binding DNA to a diamond surface. Aminating the surface by UV-radiation will also make the surface pH sensitive depending on the amount of UV-radiation. Furthermore, amidogen (NH$_2$, on-top) groups produced by long-term UV-radiation have proven to be stable under exposure to air. \cite{kwang-soup.song2006}. It has also been reported that diamond has high stability and sensibility as well as compatibility with microelectronic processing technology. All of these properties also make diamond a promising candidate for  biological integration of microelectronics as well as biological modification \cite{yangwenshaw2002}. 
+
+%In applications such as mentioned, a thin film is often requered rather than a large bulk. The main method of creating thin films in general is Chemical Vapour Deposition (CVD)  \cite{inorganicchemistrybook}. 
+
+There are also several well established ways to produce diamond in industrial and laboratory settings aside from CVD (Chemical Vapor Deposition). Naturally, the surface chemistry will vary depending on chosen method. Specifically, nano-diamonds can for example be produced using shock waves (so called shock-wave diamond) or explosives (detonation diamond) on carbon materials. The surface of shock-wave diamond is graphitized and detonation diamond is covered with various oxygen containing groups. The surface of detonation diamond have been successfully homogenised using oxidative (yielding for example mostly keto- and carboxyl-groups) or reductive methods with the latter yielding, for example, an H-terminated or OH-terminated surface. CVD-diamond will, generally, yield an H-terminated surface without further cleaning or homogenisation.\cite{ankekrueger2007} Also, several studies have already been made concerning low-index planes of diamonds, mostly practical work, but also some purely computational studies. Some of those cover the adsorption of amines on diamond.  One of these are a relatively early study that regarded the full coverage (mono-layer) of NH$_2$ on the (1 1 1), (1 1 0) and (1 0 0) planes of diamond surfaces. They used MM (Molecular Mechanics). The results showed that full coverage meant great distortion of the structure at the (1 1 0) and (1 1 1) cleavage of the diamond surface. Although the report did not report either enthalpies or adsorption energies, this may indicate that full coverage is unlikely. The (1 0 0) surface did not show any significant distortion. \cite{johnb.miller2001}
+
+Another, slightly more recent study has been done regarding adsorption of NH$_2$ on a reconstructed (1 0 0)-diamond surface using DFT (Density Functinal Theory) with the GGA (General Gradient Approximation) approximation. The resulting energies, while comparing a structure with two nearby NH$_2$ groups with one with hydrogen instead, showed that the energy levels were lower in the latter case. It is hence unlikely that two amino-groups will form in two nearby reaction sites at the reconstructed (1 0 0) diamond surface. \cite{yan.dong2010}
+
+Amidogen (NH) and Amine (NH$_2$) adsorption has also been found to be energetically favoured around room temperature on the (1 0 0), (1 1 0), and (1 1 1) planes of nanodiamond using density functional tight binding simulations.  \cite{lin.lai2011}
+
+\section{Theory}
+\subsection{Surfaces of diamond}
+\subsubsection{General surface theory}
+The reactivity of a crystal surface is known to be dependent of the surface structure and morphology, which do not only depend on the crystal lattice, but also the orientation of the intersection in relation to the crystal lattice. Both coordination numbers and numbers of possible reaction sites differ depending on plane (orientation of the intersection) and surface morphology. The specific plane is formally described using miller indexes where the numbers represent the intersection through the three mayor crystallographic axes of the lattice. The three most simple surface planes are (1 1 1), (1 1 0) and (1 0 0) but it is possible to use higher indexes. The (1 1 1), (1 1 0) and (1 0 0) planes are demonstrated in figure \ref{millerindex}. Naturally, properties that generally leads to larger surface energy such as large surface areas and low coordination numbers on surface atoms generally means a higher reactivity and a stronger binding of an adsorbate. Another property that affect surface energy, and thus its reactivity, is how close-packed the surface atoms are. The direction of free bonds at the radical surface also plays a role in how well an adsorbate can be bonded to the surface \cites{surfaces, BAHC}. 
+
+\begin{figure} \captionsetup{width=.8\linewidth}
+\caption{A description of the  (1 0 0), (1 1 1) and (1 1 0) planes. This picture was picked from an online glossary \cite{millerindex}, but the same information can be found in any book pertaining basic solid state chemistry} \label{millerindex}
+%\input{pictures/products.pdf_tex}
+\includegraphics[width=.8\linewidth]{pictures/millerindex.png}
+\end{figure}
+
+\subsubsection{Structure of the low index surfaces of diamond}
+For simplicity, this study only explores the adsorption of ammonia on diamond at the three low-index surfaces (1 1 1), (1 1 0) and (1 0 0). The overall structure of diamond is a derivative of the zinkblendestructure where all atoms are the same (se figure \ref{diamond_general}). In other words, all carbon atoms in the bulk have the coordination number 4 meaning sp$^3$-hybridisation and a tetrahedral symmetry around the atoms  (se figure \ref{diamond_general}). A closer look at the three planes show that the surface atoms has the same coordination number, which is three, but the rest is different. The (1 0 0) plane does not keep perfect tetrahedral symmetry around the carbon atoms at the surface and are less close-packed than the other two planes studied and is therefore expected to have the largest surface energy.  One might even speculate that it is possible for a bond to break between two neighbouring surface atoms, creating lower coordination numbers. In comparison, the (1 1 0) and (1 1 1) planes do keep the tetrahedral symmetry around the carbon atoms. One can also see that while the surface of the (1 1 1) plane seem more close-packed than the (1 1 0), the free bonds of the latter is actually closer to each other in the latter case. A schematic illustration displaying the free bonds (refererred to as dangling bonds) of the three planes is shown in figure  \ref{dangling_bonds}. 
+
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{The general lattice of diamond. This picture was generated on a free, online resource center, but the same information can be obtained in many ways and the diamond structure as well as the that of zinkblende are both to be considered general nowledge.} \label{diamond_general}
+\includegraphics[width=.8\linewidth]{pictures/diamond_general.png}
+\end{figure} 
+
+\begin{figure} \captionsetup{width=.5\linewidth} \caption{Schematic illustration displaing the dangling bonds of the (1 1 1), (1 1 0) and (1 0 0) plane from the side (top) and from above (bottom).} \label{dangling_bonds}
+\includegraphics[width=.5\linewidth]{pictures/dangling_bonds.png}
+\end{figure} 
+
+
+
+
+
+\printbibliography
+\end{document}
+
