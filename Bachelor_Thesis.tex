@@ -137,7 +137,37 @@ Molecular modelling is a good way to get a further understanding of the workings
 
 There are hence several different approaches and methods developed for modelling chemical systems, each using their own approximations that have their own pros and cons. Those use quantum mechanics, molecular mechanics  or a statistical approach. Quantum mechanical methods are, in essence, solving the problem by approximate solutions of the Shcrödinger equation.  Molecular mechanics uses classical mechanics and replace the electrons with a fixed force field that represent  them. Molecular mechanics might generate properties such as temperature dependence, different kinetical properties and even information about systems that are not in equilibrium.  The statistical approach uses the inherent statistical properties that exist within all systems and will therefore only give information about systems in equilibrium, which those methods are very good at. Both molecular mechanics and methods that use statistics are cheap in computational time and requirement, so very large systems can be simulated at a short time. They do not, however, give any information about electron configuration (which is what this study wanted) \cite{computionalprimer}. Hence the quantum mechanical approach had to be used here.
 
+\subsection{Quantum mechanical methods}
+\subsubsection{General}
+\paragraph*{}
+As mentioned earlier, quantum mechanical methods calculates the total energy of a system by 'solving' the Schrödinger equation with the help of various approximations. Those approximations are needed as it is very hard to successfully calculate all interactions between two or more particles. There are therefore not one, but several different approaches for that, and the area is still under development. 
 
+The Schrödinger equation in its most basic form is stated below (se equation \ref{shrodinger1}). H is an operator which operates on a mathematical function, $\Psi$ is the wave-function and E the energy of the system. $\Psi$ is actually a set of functions with each specific function $\Psi_i$ corresponding to an allowed E$_i$. The functioanal of the Schrödinger equation is what is referred to the Hamiltonian. 
+The Hamiltonian is composed of two parts, the part that comes from the kinetic energy of the system (\^{T}) and the external potential energy of the system (\^{S}). Wave-functions that satisfy the Schrödinger equation are normally called orbitals which will be used  henceforth. 
+
+\begin{equation} \label{shrodinger1}
+H \Psi = ( \hat{T} + \hat{S}) \Psi = E \Psi
+\end{equation}
+This is a many-body problem and therefore not solvable (one can not get an exact replica of reality), the computational cost will also increase rapidly as the size of the core and number of electrons increase. Therefore, the Born-Oppenheimer approximation will be used from know on in the text.
+
+\paragraph{Explanation: The Born-Oppenheimer approximation:}
+Computational  chemists physics will therefore use the Born-Oppenheimer Approximation. The BO-approximation states that the mass of the nuclei are so much bigger than that of the electrons that the mass of the electrons is negligible and can be approximated to a fixed field while studying the nuclei. It also states that the movements of the nuclei are so small compared to that of the electrons that the core can be described as fixed points while studying the electrons. In this study, the electrons are studied, so the nuclei will be fixed. 
+
+\paragraph*{}
+ The orbitals are not known for poly-electron atoms and molecules, hence the use of approximate orbitals. As it is, when implementing orbitals in a model,  a starting set of wave-functions that satisfy equation \ref{shrodinger} are used leading to a starting energy. The wave-functions are themselves a linear combination of so called basis functions that are picked from a set of pre-defined function. The total set of basis functions used in a calculation is referred to the basis set of the calculation. 
+
+\paragraph{Explanation: A basis set} is a set of predefined functions that are used to describe the wave-functions of the system that is being studied. Each wave-function is a linear combination of basis functions. \cite{burke} A plane wave basis set is a set uses plane waves functions.
+
+\paragraph{Explanation: A plane wave}
+A plane wave simply is a wave that is a hole plane rather than a single line. Those can be described using a wave and a vector that shows the direction of the plane wave. Specific 3-D surfaces can be obtained by combining several non-parallel plane-waves. 
+
+\subsubsection{Plane wave basis sets and cut-off energy}
+Plane wave basis functions are, as the name implies, a set of basis functions that uses plane waves instead of ordinary waves. To get a perfect result, an infinite number of plane waves are needed in principle. Naturally, the accuracy of the result increase while using more functions. That does not prevent good results as one apply Bloch's theorem (that states that an infinite number of plane waves can be used) and one can truncate by only including the most important plane-waves. It has been found that the plane-waves with the smallest kinetic energy is most important. That means that only the plane-waves with a kinetic energy that is below a pre-specified value, the so called cut-off-energy, is needed to be included. 
+
+\paragraph*{}
+There is, generally, necessary to use more basis functions than those needed to just describe the electrons surrounding the lone atoms. Naturally, a large basis set both increases the accuracy of the calculation as well as creating a great increase in computational requirement.  There are also different methods to get the energy by solving and optimizing the equation \cite{computionalprimer}.
+
+There are both several basis set and methods to chose from, and the purpose of this study was not to write a book about quantum chemical methods, so no more descriptions of all combinations that were not used will follow.
 
 
 
