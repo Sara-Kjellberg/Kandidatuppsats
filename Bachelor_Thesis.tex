@@ -169,7 +169,44 @@ There is, generally, necessary to use more basis functions than those needed to 
 
 There are both several basis set and methods to chose from, and the purpose of this study was not to write a book about quantum chemical methods, so no more descriptions of all combinations that were not used will follow.
 
+\subsection{Density Functional Theory (DFT)}
+The general concept behind DFT is to treat the electron as an inhomogeneous gas of electrons rather than discreet orbitals. That is, the electron density is calculated as opposed to each electron on their own and is therefore not just another way of solving the Schrodinger equation. \cite{burke} This is a good approach, as Kohn and Hohenberg showed in the year 1964 that the energy of a system is uniquely defined by its electron density and vice versa. The proof was a simple case of contradiction. That means that the potential, \^{S} in equation \ref{shrodinger1} can be replaced with a density. The methods for this were developed a year later by Kohn and Sham. The final expression for the energy of an interacting gas in a static potential $v(r)$ and electron density ($n(r)$) that was presented in that report is shown in equation \ref{Kohn_hohenberg}. $G(n)$ is a universal functional of the density.   
 
+\begin{equation} \label{Kohn_hohenberg}
+E = G(n) + \int v(r) n(r) dr + \frac{1}{2} \iint (\frac{n(r) n(r')}{|r-r'|})dr dr'
+\end{equation}
+
+As an approximation of $G(n)$, Kohn and Sham define the universal functional ($G(n)$) as the sum of the kinetic energy,$T_s(n)$ and the major parts of the effects of the exchange and the correlation energy, $E_{xe}(n)$ (see equation \ref{(G(n)}).
+\begin{equation} \label{(G(n)}
+G(n) \equiv T_s(n) + E_{xc}(n)
+\end{equation}
+
+
+The hard part of equation \ref{(G(n)} is the correlation energy which can be approximated easily if the electron density does not vary much. Then the correlation energy can be calculated simply as if each electron is in a homogeneous gas of electrons. (equation \ref{homogenous_gas}, $\epsilon_{xc}$ is the correlation and exchange energy per electron in a homogeneous gas with density n). This approach is referred to as the Local Density Approximation (LDA).
+
+\begin{equation} \label{homogenous_gas}
+E_{xe}[n] = \int n(r)\epsilon_{xc} n(r) dr 
+\end{equation}
+
+Equation \ref{homogenous_gas} do not work well when the density is expected to vary so other solutions or further approximations for the correlation and exchange energy is needed. She solution that Kohn and Sham suggested were the Local Density Approximation (LDA) that can be extended to the General Gradient Approximation (GGA).
+\cite{Kohn_and_Hohenberg64}\cite{Kohn_and_Sham65}
+\paragraph{Explanation: A functional} is a real value function on a vector space (usually of functions). The meaning of that is that it maps a set of functions (if that is what the vector space contains) to a set of numbers \cite{functional}. In DFT, a set of wavefunctions that represent the electron cloud is mapped to a set of unique eigenvalues \cite{burke} .
+
+
+
+
+\subsubsection{Local Density Approximation, LDA}
+Another explanation of equation \ref{homogenous_gas}, and hence LDA, is to say that LDA, as the name implies, calculate the energy by using the local density for each electron as if that was the universal density. This can bee implemented by writing the functional as an integral over a function of the density at each point in space.
+
+\paragraph{General Gradient Approximation, GGA}
+In this study, the GGA (General Gradient Approximation) which is an extension of LDA, was used. An oversimplified way of describing the General Gradient approximation is to say that each functional use a local functional that depend on the gradient, as opposed to the value, of the electron density at each point in space \cite{burke}.
+
+
+
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{An easy illustration of the super-cell approach showing 9 cells. The vacuum between the sheets are chosen so that they do not interact. The only difference between this figure and the one in the study is the functional group. The structure inside the rectangle in the middle corresponds to roughly one cell.} \label{supercell}
+%\input{pictures/products.pdf_tex}
+\includegraphics[width=.8\linewidth]{pictures/supercellvacuum.png}
+\end{figure}
 
 \printbibliography
 \end{document}
