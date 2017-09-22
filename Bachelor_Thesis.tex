@@ -150,21 +150,19 @@ H \Psi = ( \hat{T} + \hat{S}) \Psi = E \Psi
 \end{equation}
 This is a many-body problem and therefore not solvable (one can not get an exact replica of reality), the computational cost will also increase rapidly as the size of the core and number of electrons increase. Therefore, the Born-Oppenheimer approximation will be used from know on in the text.
 
-\paragraph{Explanation: Functional:} \label{functional} A functional takes in functions and gives them fixed values. 
-
 \paragraph{Explanation: The Born-Oppenheimer approximation:}
 The BO-approximation states that the mass of the nuclei are so much larger than that of the electrons that the mass of the electrons is negligible and can be approximated to a fixed field while studying the nuclei. It also states that the movements of the nuclei are so small compared to that of the electrons that the core can be described as fixed points while studying the electrons. In this study, the electrons are studied, so the nuclei will be fixed. 
 
 \paragraph*{}
- The orbitals are not known for poly-electron atoms and molecules, hence the use of approximate orbitals. As it is, when implementing orbitals in a model,  a starting set of wave-functions that satisfy equation \ref{shrodinger1} are used leading to a starting energy. The wave-functions are themselves a linear combination of so called basis functions that are picked from a set of pre-defined function. The total set of basis functions used in a calculation is referred to the basis set of the calculation. 
+ The orbitals are not known for poly-electron atoms and molecules, hence the use of approximate orbitals. As it is, when implementing orbitals in a model,  a starting set of wave-functions that satisfy equation \ref{shrodinger1} are used leading to a starting energy. The wave-functions are themselves a linear combination of so called basis functions that are picked from a set of pre-defined functions. The total set of basis functions used in a calculation is referred to the basis set of the calculation. 
 
 \paragraph{Explanation: A basis set} is a set of predefined functions that are used to describe the wave-functions of the system that is being studied. Each wave-function is a linear combination of basis functions. \cite{burke} A plane-wave basis set is a set uses plane wave-functions.
 
 \paragraph{Explanation: A plane wave-function}
-A plane wave simply is a wave-function that is a whole plane rather than a single line. Those can be described using a wave-function and a vector that shows the direction of the plane wave-function. Specific 3-D surfaces can be obtained by combining several non-parallel plane-waves. 
+A plane wave-function  is a wave-function that is a whole plane rather than a single line. Those can be described using a wave-function and a vector that shows the direction of the plane wave-function. Specific 3-D surfaces can be obtained by combining several non-parallel plane-waves. 
 
 \subsubsection{Plane wave basis sets and cut-off energy}
-Plane wave basis functions are, as the name implies, a set of basis functions that uses plane waves instead of ordinary waves. To get a perfect result, an infinite number of plane waves are needed in principle. Naturally, the accuracy of the result increase while using more functions. That does not prevent good results as one apply Bloch's theorem (that states that an infinite number of plane waves can be used) and one can truncate by only including the most important plane-waves. It has been found that the plane-waves with the smallest kinetic energy is most important. That means that only the plane-waves with a kinetic energy that is below a pre-specified value, the so called cut-off-energy, is needed to be included. 
+Plane wave basis functions are, as the name implies, a set of basis functions that uses plane waves instead of ordinary waves. In principle, to get a perfect result, an infinite number of plane waves are needed. Naturally, the accuracy of the result increases while using more functions. That does not prevent good results as one apply Bloch's theorem as well as truncate by only including the most important plane-waves. It has been found that the plane-waves with the smallest kinetic energy is most important. That means that only the plane-waves with a kinetic energy that is below a pre-specified value, the so called cut-off-energy, is needed to be included. 
 
 \paragraph*{}
 There is, generally, necessary to use more basis functions than those needed to just describe the electrons surrounding the lone atoms. Naturally, a large basis set both increases the accuracy of the calculation as well as creating a great increase in computational requirement.  There are also different methods to get the energy by solving and optimizing the equation \cite{computionalprimer}.
