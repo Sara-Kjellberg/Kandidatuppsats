@@ -237,6 +237,32 @@ This is how it is done practically (for the person that uses CASTEP). A super-ce
 \section{Methods}
 All data were obtained doing geometry optimizations using DFT (Density Functional Theory) with GGA (General gradient approximation). Specifically Perdow--Burke-Erzhow density functional (PBE-DFT) were used in the program CASTEP \cite{castep}. Also, a super-cell approach was used. Band structure, density of states and population analyses were made as a complement to the energy calculations. 
 
+\subsection{Implementation}
+\subsubsection{The model}
+There are, theoretically, three possible ways for the nitrogen in ammonia to attach to the diamond surface.  
+
+It may attach in an on-top configuration either as amidogen (NH$_2$) with a single bond or as imidogen (NH) with a double bond. The latter is only possible at the (1 0 0) plane due to the position of dangling bonds. Or it may attach in a bridge configuration as imidogen (NH).  Also, figure \ref{dangling_bonds}  clearly shows that Amidogen (NH$_2$) groups are unlikely to build a mono layer on the (1 1 0) surface as the hydrogen of the amidogen would have to either overlap with each other or create energetically less stable angles. The possible products of the reaction between a clean diamond surface and ammonia are illustrated in figure \ref{products}.
+
+
+
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{Shematic illustration of the three possible products in the reaction between a diamond surface on the (1 0 0), (1 1 1) and (1 1 0) surfaces of diamond. Double bonded NH (to the left) is only possible at the (1 0 0) plane.} \label{products}
+%\input{pictures/products.pdf_tex}
+\includegraphics[width=.8\linewidth]{pictures/products_new.png}
+\end{figure}
+
+
+
+
+
+
+%Implementation
+\paragraph*{Theory}
+The adsorption energies ($E_a$) were calculated by subtracting the energy of the amino-group ($E_{NH_2}$) and the energy of a surface lacking one hydrogen ($E_{surf-H}$) from the energy of the amino-terminated diamond surface ($E_{D-NH_2}$)
+
+
+\begin{equation} E_{a} = E_{D-NH_2}-(E_{NH_2}+E_{surf-H}) \end{equation} 
+
+Hence, the internal energy of both NH, NH$_2$, terminated surface lacking 1 or 2 hydrogen depending on calculation had to be calculated.
 \printbibliography
 \end{document}
 
