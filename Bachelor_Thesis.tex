@@ -272,6 +272,29 @@ The models were generated and modified to specify each specific surface using th
 \section{Results}
 At all surfaces: The adsorption energy was calculated at full coverage and at low coverage for imidogen (NH) and amidogen (NH$_2$) at all planes. For every plane an additional calculation was made with 50\% coverage for amidogen (NH$_2$ ). Adsorption energies of on-top imidogen (NH, double bonded) on the (1 0 0) plane was calculated at 100\%, 50\% and single occupied. Single occupied groups are not truly single occupied due to the super-cell approximation, and real coverage will be written henceforth. All adsorption energies are demonstrated in figure \ref{NH2diagram} and summarised in table \ref{adsorptionEnergies}. Also, the resulting structures are shown in figure   \ref{NH2_summary_low}, \ref{NH2_summary_covered}, \ref{NH2_summary_half}, \ref{NHbridge_summary}, \ref{NHdb_summary} and \ref{H_terminated}. 
 
+\begin{table}[!h] \caption{Adsorption energies for different possible products with nitrogen and a diamond surface at the (1 1 1), (1 1 0) and (1 0 0) planes. The General Gradient Approximation (GGA) was used with the Perdow-Burke-Erzhov (PBE) density functional. The on-top position on the (1 0 0) surface had problem converging and where hence forced to be less accurate with a cutoff energy of 2E-4 eV instead of 2E-6 as with the other rest of the calculations.} \label{adsorptionEnergies}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{|l|c|c|c|c|}
+								& Single occupied, eV	&  Half coverage 	& Full coverage, eV \\ \hline
+(1 1 1)-NH (bridge)						&$-5.0$ 			& $- $			& $-4.1 $ \\ \hline
+(1 1 1)-NH$_2$ (on-top)					&$-3.6$ 			& $-3.4 $  		& $-2.3 $ \\ \hline
+(1 1 0)-NH (bridge)						&$-4.1$ 			& $- $  		& $-3.6 $ \\ \hline
+(1 1 0)-NH$_2$ (on-top)					&$-3.1$ 			& $-2.6 $ 		& $42.4 $ \\ \hline
+(1 0 0)-NH (bridge)						&$-5.1$ 			& $- $ 		& $-5.0 $ \\ \hline
+(1 0 0)-NH (double bonded, on-top) 			&$-3.5$ 			& $- $ 		& $-4,9 $ \\ \hline
+(1 0 0)-NH$_2$ (on-top)					&$-3.9$ 			& $-3.7 $ 		& $-3.1 $ \\ \hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+
+
+
+
+
+
+
+
 \begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of amidogen (NH$_2$) with low coverage coverage} \label{NH2_summary_low}
 \includegraphics[width=.8\linewidth]{pictures/NH2_summary_low.png}
 \end{figure}
@@ -375,21 +398,6 @@ All calculations were carried out using the CASTEP software. The corresponding g
 \section{Data}
 
 
-\begin{table}[!h] \caption{Adsorption energies for different possible products with nitrogen and a diamond surface at the (1 1 1), (1 1 0) and (1 0 0) orientation. The General Gradient Approximation (GGA) is used with the Perdow-Burke-Erzhov (PBE) density functional. The on-top position on the (1 0 0) surface had problem converging and where hence forced to be less accurate with a cutoff energy of 2E-4 eV instead of 2E-6 as with the other rest of the calculations.} \label{adsorptionEnergies}
-
- \begin{adjustbox}{max width=\textwidth}
-\begin{tabular}{|l|c|c|c|c|}
-								& Single occupied, eV	&  Half coverage 	& Full coverage, eV \\ \hline
-(1 1 1)-NH (bridge)						&$-5.0$ 	& $- $				& $-4.1 $ \\ \hline
-(1 1 1)-NH$_2$ (on-top)					&$-3.6$ 	& $-3.4 $  			& $-2.3 $ \\ \hline
-(1 1 0)-NH (bridge)						&$-4.1$ 	& $- $  				& $-3.6 $ \\ \hline
-(1 1 0)-NH$_2$ (on-top)					&$-3.1$ 	& $-2.6 $ 			& $42.4 $ \\ \hline
-(1 0 0)-NH (bridge)						&$-5.1$ 	& $- $ 				& $-5.0 $ \\ \hline
-(1 0 0)-NH (double bonded, on-top) 		&$-3.5$ 	& $- $ 				& $-4,9 $ \\ \hline
-(1 0 0)-NH$_2$ (on-top)					&$-3.9$ 	& $-3.7 $ 			& $-3.1 $ \\ \hline
-\end{tabular}
-\end{adjustbox}
-\end{table}
 
 \begin{figure}[!h] \captionsetup{width=.8\linewidth} \caption{A graphical representation of the resulting adsorption energies (in eV) for NH and NH$_2$ on the (1 0 0), (1 1 0) and (1 1 1) surface of diamond. The results are obtained by using the DFT (specifically PE) with the generalized gradient approximation using pseudopotentials for the core electrons.} \label{NH2diagram}
 \includegraphics[width=.8\linewidth]{pictures/NH2diagram.png}
