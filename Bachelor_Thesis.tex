@@ -77,11 +77,7 @@
 % Bottom of the page
 	{\large \today\par}
 \end{titlepage}
-%\maketitle
-%\begin{figure}[t] \captionsetup{width=.8\linewidth}
-%\includegraphics[width=2cm]{pictures/uulog.png}
-%\end{figure}
-%\hrulefill %skriv ut en linje
+
 \abstract{The adsorption energy of aminated diamond surfaces on the (1 1 1), (1 1 0) and (1 0 0) diamond surfaces have been calculated with density functional theory (DFT). The resulting values show that bridging is favoured before on-top nitrogen at low coverage for all the low index planes. The trend is even more pronounced as the coverage increases, most likely due to sterical hindrance. As expected, the imidogen (NH) and amidogen (NH$_2$)  groups are bonded to the surface planes in the order (1 0 0)$>$(1 1 1)$>$(1 1 0) as decrease in energy is the highest on the (1 0 0) plane and lowest on the (1 010) plane. The effect of sterical hindrance is largest at the (1 1 0) surface while the (1 0 0) surface is almost unaffected by neighbouring functional groups. Also, double bonded on-top imidogen (NH) is the least stable group at the (1 0 0) surface at low coverage while it is almost as stable as bridging NH when having a full mono-layer. Moreover, on-top imidogen (NH) was highly distorted and forced a change in surface geometry}
 
 \newpage
@@ -270,6 +266,10 @@ The models were generated and modified to specify each specific surface using th
 
 \section{Results}
 At all surfaces: The adsorption energy was calculated at full coverage and at low coverage for imidogen (NH) and amidogen (NH$_2$) at all planes. For every plane an additional calculation was made with 50\% coverage for amidogen (NH$_2$ ). Adsorption energies of on-top imidogen (NH, double bonded) on the (1 0 0) plane was calculated at 100\%, 50\% and single occupied. Single occupied groups are not truly single occupied due to the super-cell approximation, and real coverage will be written henceforth. All adsorption energies are demonstrated in figure \ref{NH2diagram} and summarised in table \ref{adsorptionEnergies}. Also, the resulting structures are shown in figure   \ref{NH2_summary_low}, \ref{NH2_summary_covered}, \ref{NH2_summary_half}, \ref{NHbridge_summary}, \ref{NHdb_summary} and \ref{H_terminated}. 
+
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{A graphical representation of the resulting adsorption energies (in eV) for NH and NH$_2$ on the (1 0 0), (1 1 0) and (1 1 1) surface of diamond. The results are obtained by using the DFT (specifically PE) with the generalized gradient approximation using pseudopotentials for the core electrons.} \label{NH2diagram}
+\includegraphics[width=.8\linewidth]{pictures/NH2diagram.png}
+\end{figure}
 
 \begin{table}[!h] \caption{Adsorption energies for different possible products with nitrogen and a diamond surface at the (1 1 1), (1 1 0) and (1 0 0) planes. The General Gradient Approximation (GGA) was used with the Perdow-Burke-Erzhov (PBE) density functional. The on-top position on the (1 0 0) surface had problem converging and where hence forced to be less accurate with a cutoff energy of 2E-4 eV instead of 2E-6 as with the other rest of the calculations.} \label{adsorptionEnergies}
 \begin{adjustbox}{max width=\textwidth}
