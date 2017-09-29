@@ -265,7 +265,7 @@ Hence, the internal energy of both NH, NH$_2$, terminated surface lacking 1 or 2
 The models were generated and modified to specify each specific surface using the materials study software before the calculations were carried out using CASTEP. The adsorption energy was calculated both at full coverage and with a single amidogen or imidogen per supercell. Also, additional calculations were made for amidogen where half of the sites were covered so that amidogen (NH$_2$, on-top) could be compared with an equal amount of imidogen (NH, bridge) when having a monolayer of the latter. The size of the supercells where chosen so that the adsorbates of the supercells with only one amidogen (NH$_2$, on-top) or imidogen (NH, bridge) from different cells would not interact with each other. Rather than having the user of the CASTEP software manually set the calculation parameters that affect accuracy, a general quality of calculation is chosen depending on how accurate the calculation has to be. The specifics of each quality can be found at CASTEPS own homepage. In this study, all calculations where set to medium quality \cite{Castep_user_guide}.
 
 \section{Results}
-At all surfaces: The adsorption energy was calculated at full coverage and at low coverage for imidogen (NH) and amidogen (NH$_2$) at all planes. For every plane an additional calculation was made with 50\% coverage for amidogen (NH$_2$ ). Adsorption energies of on-top imidogen (NH, double bonded) on the (1 0 0) plane was calculated at 100\%, 50\% and single occupied. Single occupied groups are not truly single occupied due to the super-cell approximation, and real coverage will be written henceforth. All adsorption energies are demonstrated in figure \ref{NH2diagram} and summarised in table \ref{adsorptionEnergies}. Also, the resulting structures are shown in figure   \ref{NH2_summary_low}, \ref{NH2_summary_half}, \ref{NH2_summary_covered}, \ref{NHbridge_summary}, \ref{NHdb_summary} and \ref{H_terminated}. 
+At all surfaces: The adsorption energy was calculated at full coverage and at low coverage for imidogen (NH) and amidogen (NH$_2$) at all planes. For every plane an additional calculation was made with 50\% coverage for amidogen (NH$_2$ ). Adsorption energies of on-top imidogen (NH, double bonded) on the (1 0 0) plane was calculated at 100\%, 50\% and single occupied. Single occupied groups are not truly single occupied due to the super-cell approximation, and real coverage will be written henceforth. All adsorption energies are demonstrated in figure \ref{NH2diagram} and summarised in table \ref{adsorptionEnergies}. Also, the resulting structures are shown in figure   \ref{NH2_summary_low}, \ref{NH2_summary_covered}, \ref{NH2_summary_half}, \ref{NHbridge_summary}, \ref{NHdb_summary} and \ref{H_terminated}. 
 
 \begin{figure} \captionsetup{width=.8\linewidth} \caption{A graphical representation of the resulting adsorption energies (in eV) for NH and NH$_2$ on the (1 0 0), (1 1 0) and (1 1 1) surface of diamond. The results are obtained by using the DFT (specifically PE) with the generalized gradient approximation using pseudopotentials for the core electrons.} \label{NH2diagram}
 \includegraphics[width=.8\linewidth]{pictures/NH2diagram.png}
@@ -298,28 +298,30 @@ At all surfaces: The adsorption energy was calculated at full coverage and at lo
 \includegraphics[width=.8\linewidth]{pictures/NH2_summary_low.png}
 \end{figure}
 
-\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of the (1 0 0)-plane (top), (1 1 0)-plane (middle) and (1 1 1)-plane (bottom) of amidogen (NH$_2$) with a full monolayer} \label{NH2_summary_half}
-\includegraphics[width=.8\linewidth]{pictures/NH2_summary_half.png}
-\end{figure}
-
-\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of the (1 0 0)-plane (top), (1 1 0)-plane (middle) and (1 1 1)-plane (bottom) of amidogen (NH$_2$) with  half the sites covered coverage} \label{NH2_summary_covered}
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of the (1 0 0)-plane (top), (1 1 0)-plane (middle) and (1 1 1)-plane (bottom) of amidogen (NH$_2$) with  half the sites covered.} \label{NH2_summary_covered}
 \includegraphics[width=.8\linewidth]{pictures/NH2_summary_covered.png}
 \end{figure}
 
-\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of imidogen (NH) with maximum coverage coverage} \label{NHbridge_summary}
+
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of the (1 0 0)-plane (top), (1 1 0)-plane (middle) and (1 1 1)-plane (bottom) of amidogen (NH$_2$) with a full monolayer.} \label{NH2_summary_half}
+\includegraphics[width=.8\linewidth]{pictures/NH2_summary_half.png}
+\end{figure}
+
+
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of the (1 0 0)-plane (top), (1 1 0)-plane (middle) and (1 1 1)-plane (bottom) of imidogen (NH) with maximum coverage.} \label{NHbridge_summary}
 %\input{pictures/products.pdf_tex}
 \includegraphics[width=.8\linewidth]{pictures/NHbridge_summary.png}
 \end{figure}
 
 
-\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of on-top imidogen on the (1 0 0) surface with low coverage (below) and maximum coverage (on-top). Note that even the maximum coverage maintain stable angles in surface carbons (109$^{\circ}$) and 1.54-1.55 Å between surface carbon which is the same as the bulk distance between carbons in diamond.} \label{NHdb_summary}
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of on-top imidogen on the (1 0 0) plane with low coverage (below) and maximum coverage (on-top). Note that even the maximum coverage maintain stable angles between surface carbons, 109$^{\circ}$ and 1.54-1.55 Å between surface carbon which is the same as the bulk distance between carbons in diamond.} \label{NHdb_summary}
 %\input{pictures/products.pdf_tex}
 \includegraphics[width=.8\linewidth]{pictures/NHdb_summary.png}
 \end{figure}
 
 
 
-\begin{figure} \captionsetup{width=.8\linewidth} \caption{All resulting structures from the gemonetry optimization of H-terminated diamond with angels and distances displayed (to the left) as well as wieved from both sides (middle left, middle right) and from above (to the right).} \label{H_terminated}
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{The optimized structures of the (1 0 0)-plane (top), (1 1 0)-plane (middle) and (1 1 1)-plane (bottom) of H-terminated diamond with angels and distances displayed (to the left) as well as wieved from both sides (middle left, middle right) and from above (to the right).} \label{H_terminated}
 %\input{pictures/products.pdf_tex}
 \includegraphics[width=.8\linewidth]{pictures/H_terminated2.png}
 \end{figure}
