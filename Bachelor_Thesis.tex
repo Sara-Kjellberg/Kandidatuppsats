@@ -4,6 +4,7 @@
 
 \usepackage[english]{babel} %English sections
 \usepackage{graphicx}    %For the possibility of pictures
+\usepackage{adjustbox} %adjusting figures and tables
 \usepackage{amssymb, amsmath} %for American Math. society symbols and environments etc.
 \usepackage{supertabular} % For tables that are larger than one page
 \usepackage{longtable} %for longer tables 
@@ -369,6 +370,42 @@ The results show that a single bridging NH is more strongly attached to the diam
 
 \section*{Acknowledgements}
 All calculations were carried out using the CASTEP software. The corresponding graphical displays where made in a Materials Study. The schematic figures were made using jmol, gimp (gnu image manipulator) and ink-scape.  Also, the project was supervised by Karin Larsson at the department of Chemistry-Ångströmlaboratoriet at the University of Uppsala.
+
+\appendix 
+\section{Data}
+
+
+\begin{table}[!h] \caption{Adsorption energies for different possible products with nitrogen and a diamond surface at the (1 1 1), (1 1 0) and (1 0 0) orientation. The General Gradient Approximation (GGA) is used with the Perdow-Burke-Erzhov (PBE) density functional. The on-top position on the (1 0 0) surface had problem converging and where hence forced to be less accurate with a cutoff energy of 2E-4 eV instead of 2E-6 as with the other rest of the calculations.} \label{adsorptionEnergies}
+
+ \begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{|l|c|c|c|c|}
+								& Single occupied, eV	&  Half coverage 	& Full coverage, eV \\ \hline
+(1 1 1)-NH (bridge)						&$-5.0$ 	& $- $				& $-4.1 $ \\ \hline
+(1 1 1)-NH$_2$ (on-top)					&$-3.6$ 	& $-3.4 $  			& $-2.3 $ \\ \hline
+(1 1 0)-NH (bridge)						&$-4.1$ 	& $- $  				& $-3.6 $ \\ \hline
+(1 1 0)-NH$_2$ (on-top)					&$-3.1$ 	& $-2.6 $ 			& $42.4 $ \\ \hline
+(1 0 0)-NH (bridge)						&$-5.1$ 	& $- $ 				& $-5.0 $ \\ \hline
+(1 0 0)-NH (double bonded, on-top) 		&$-3.5$ 	& $- $ 				& $-4,9 $ \\ \hline
+(1 0 0)-NH$_2$ (on-top)					&$-3.9$ 	& $-3.7 $ 			& $-3.1 $ \\ \hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{figure}[!h] \captionsetup{width=.8\linewidth} \caption{A graphical representation of the resulting adsorption energies (in eV) for NH and NH$_2$ on the (1 0 0), (1 1 0) and (1 1 1) surface of diamond. The results are obtained by using the DFT (specifically PE) with the generalized gradient approximation using pseudopotentials for the core electrons.} \label{NH2diagram}
+\includegraphics[width=.8\linewidth]{pictures/NH2diagram.png}
+\end{figure}
+
+
+\begin{figure} \captionsetup{width=.8\linewidth} \caption{Resulting structures for the reaction between NH/NH$_2$ and low-index diamond surfaces while having low coverage.} \label{lowcoverage}
+\includegraphics[width=.8\linewidth]{pictures/singleSite_result.png}
+\end{figure}
+
+
+\begin{figure} \captionsetup{width=.8\linewidth}  \caption{Resulting structures for the reaction between NH/NH$_2$ and low-index diamond surfaces while having a monolayer.} \label{highcoverae}
+\includegraphics[width=.8\linewidth]{pictures/singleSite_result.png}
+\end{figure}
+
+
 
 \printbibliography
 \end{document}
