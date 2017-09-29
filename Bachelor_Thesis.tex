@@ -150,7 +150,6 @@ This is a many-body problem and therefore not solvable (one can not get an exact
 \paragraph{Explanation: The Born-Oppenheimer approximation:}
 The BO-approximation states that the mass of the nuclei are so much larger than that of the electrons that the mass of the electrons is negligible and can be approximated to a fixed field while studying the nuclei. It also states that the movements of the nuclei are so small compared to that of the electrons that the core can be described as fixed points while studying the electrons. In this study, the electrons are studied, so the nuclei will be fixed. 
 
-\paragraph*{}
  The orbitals are not known for poly-electron atoms and molecules, hence the use of approximate orbitals. As it is, when implementing orbitals in a model,  a starting set of wave-functions that satisfy equation \ref{shrodinger1} are used leading to a starting energy. The wave-functions are themselves a linear combination of so called basis functions that are picked from a set of pre-defined functions. The total set of basis functions used in a calculation is referred to the basis set of the calculation. 
 
 \paragraph{Explanation: A basis set} is a set of predefined functions that are used to describe the wave-functions of the system that is being studied. Each wave-function is a linear combination of basis functions. \cite{burke} A plane-wave basis set is a set uses plane wave-functions.
@@ -161,7 +160,6 @@ A plane wave-function  is a wave-function that is a whole plane rather than a si
 \subsubsection{Plane wave basis sets and cut-off energy}
 Plane wave basis functions are, as the name implies, a set of basis functions that uses plane waves instead of ordinary waves. In principle, to get a perfect result, an infinite number of plane waves are needed. Naturally, the accuracy of the result increases while using more functions. That does not prevent good results as one apply Bloch's theorem as well as truncate by only including the most important plane-waves. It has been found that the plane-waves with the smallest kinetic energy is most important. That means that only the plane-waves with a kinetic energy that is below a pre-specified value, the so called cut-off-energy, is needed to be included. 
 
-\paragraph*{}
 There is, generally, necessary to use more basis functions than those needed to just describe the electrons surrounding the lone atoms. Naturally, a large basis set both increases the accuracy of the calculation as well as creating a great increase in computational requirement.  There are also different methods to get the energy by solving and optimizing the equation \cite{computionalprimer}.
 
 There are both several basis set and methods to chose from, and the purpose of this study was not to write a book about quantum chemical methods, so no more descriptions of all combinations that were not used will follow.
